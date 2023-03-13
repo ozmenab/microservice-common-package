@@ -8,9 +8,9 @@
         <version>2.7.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.kodlamaio</groupId>
+    <groupId>com.ozmenab</groupId>
     <artifactId>common</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>common</name>
     <description>common</description>
     <properties>
@@ -52,5 +52,11 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub ozmenab Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/ozmenab/microservice-common-package</url>
+        </repository>
+    </distributionManagement>
 </project>
