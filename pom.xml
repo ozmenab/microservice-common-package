@@ -8,11 +8,12 @@
         <version>2.7.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.ozmenab</groupId>
+    <groupId>io.github.ozmenab</groupId>
     <artifactId>common</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>common</name>
     <description>common</description>
+    <packaging>jar</packaging>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -43,20 +44,45 @@
             <version>3.1.0</version>
         </dependency>
     </dependencies>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub ozmenab Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/ozmenab/microservice-common-package</url>
-        </repository>
-    </distributionManagement>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Abdullah Özmen</name>
+            <email>ozmenab@gmail.com</email>
+            <organization>io.github.ozmenab</organization>
+            <organizationUrl>https://github.com/ozmenab</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/ozmenab/microservice-common-package.git</connection>
+        <developerConnection>scm:git:ssh://github.com/ozmenab/microservice-common-package.git</developerConnection>
+        <url>http://github.com/simpligility/ozmenab/microservice-common-package</url>
+    </scm>
+
 </project>
